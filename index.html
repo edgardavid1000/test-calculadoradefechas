@@ -3,16 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Fechas - Edgardavid1000</title>
-    <meta name="description" content="Calculadora de fechas para calcular la distancia entre dos fechas, sumar o restar días. Herramienta simple y profesional.">
-    <meta name="keywords" content="calculadora de fechas, distancia entre fechas, sumar días, restar días, herramienta web">
+    <title>Calculadora de Fechas | Herramienta online gratuita - Edgardavid1000</title>
+    <meta name="description" content="Calculadora de fechas online gratuita. Calcula la distancia entre fechas, suma o resta días a cualquier fecha. Herramienta simple y profesional.">
+    <meta name="keywords" content="calculadora de fechas, distancia entre fechas, sumar días, restar días, herramienta web, fecha calculadora">
     <meta name="author" content="Edgardavid1000">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://edgardavid1000.github.io/calculadora-fechas/">
+    <meta property="og:title" content="Calculadora de Fechas | Herramienta online gratuita">
+    <meta property="og:description" content="Calcula la distancia entre fechas, suma o resta días a cualquier fecha. Herramienta simple y gratuita.">
+    <meta property="og:image" content="https://edgardavid1000.github.io/calculadora-fechas/images/calculadora-og.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://edgardavid1000.github.io/calculadora-fechas/">
+    <meta property="twitter:title" content="Calculadora de Fechas | Herramienta online gratuita">
+    <meta property="twitter:description" content="Calcula la distancia entre fechas, suma o resta días a cualquier fecha. Herramienta simple y gratuita.">
+    <meta property="twitter:image" content="https://edgardavid1000.github.io/calculadora-fechas/images/calculadora-og.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://edgardavid1000.github.io/calculadora-fechas/">
+    
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preconnect to domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Calculadora de Fechas",
+      "description": "Calculadora de fechas online gratuita. Calcula la distancia entre fechas, suma o resta días a cualquier fecha.",
+      "author": {
+        "@type": "Person",
+        "name": "Edgardavid1000"
+      },
+      "applicationCategory": "UtilityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
         <h1>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
                 <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -20,50 +67,51 @@
             </svg>
             Calculadora de Fechas
         </h1>
+        <p class="tagline">Calcula distancias, suma o resta días a cualquier fecha</p>
     </header>
     <main>
-        <section id="distance">
-            <h2>Distancia entre dos fechas</h2>
+        <section id="distance" aria-labelledby="distance-heading">
+            <h2 id="distance-heading">Distancia entre dos fechas</h2>
             <div class="input-group">
                 <label for="date1">Fecha 1:</label>
-                <input type="date" id="date1" required>
+                <input type="date" id="date1" required aria-required="true">
             </div>
             <div class="input-group">
                 <label for="date2">Fecha 2:</label>
-                <input type="date" id="date2" required>
+                <input type="date" id="date2" required aria-required="true">
             </div>
-            <button onclick="calculateDistance()">Calcular</button>
-            <p id="distanceResult" class="result"></p>
+            <button onclick="calculateDistance()" aria-label="Calcular distancia entre fechas">Calcular</button>
+            <p id="distanceResult" class="result" aria-live="polite"></p>
         </section>
-        <section id="addDays">
-            <h2>Sumar días a una fecha</h2>
+        <section id="addDays" aria-labelledby="add-heading">
+            <h2 id="add-heading">Sumar días a una fecha</h2>
             <div class="input-group">
                 <label for="dateAdd">Fecha:</label>
-                <input type="date" id="dateAdd" required>
+                <input type="date" id="dateAdd" required aria-required="true">
             </div>
             <div class="input-group">
                 <label for="daysAdd">Días a sumar:</label>
-                <input type="number" id="daysAdd" min="0" required>
+                <input type="number" id="daysAdd" min="0" required aria-required="true">
             </div>
-            <button onclick="addDays()">Calcular</button>
-            <p id="addResult" class="result"></p>
+            <button onclick="addDays()" aria-label="Sumar días a la fecha">Calcular</button>
+            <p id="addResult" class="result" aria-live="polite"></p>
         </section>
-        <section id="subtractDays">
-            <h2>Restar días a una fecha</h2>
+        <section id="subtractDays" aria-labelledby="subtract-heading">
+            <h2 id="subtract-heading">Restar días a una fecha</h2>
             <div class="input-group">
                 <label for="dateSubtract">Fecha:</label>
-                <input type="date" id="dateSubtract" required>
+                <input type="date" id="dateSubtract" required aria-required="true">
             </div>
             <div class="input-group">
                 <label for="daysSubtract">Días a restar:</label>
-                <input type="number" id="daysSubtract" min="0" required>
+                <input type="number" id="daysSubtract" min="0" required aria-required="true">
             </div>
-            <button onclick="subtractDays()">Calcular</button>
-            <p id="subtractResult" class="result"></p>
+            <button onclick="subtractDays()" aria-label="Restar días a la fecha">Calcular</button>
+            <p id="subtractResult" class="result" aria-live="polite"></p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Edgardavid1000 - Hosted on GitHub Pages</p>
+        <p>&copy; 2023-2025 Edgardavid1000 - Calculadora de Fechas | <a href="https://github.com/edgardavid1000/calculadora-fechas" target="_blank" rel="noopener noreferrer">GitHub</a></p>
     </footer>
     <script src="script.js"></script>
 </body>
