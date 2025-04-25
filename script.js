@@ -30,7 +30,11 @@ function addDays() {
     const days = parseInt(daysInput, 10);
     date.setDate(date.getDate() + days);
 
-    resultElement.textContent = `La nueva fecha es: ${date.toLocaleDateString('es-ES')}`;
+    // Obtenemos el día de la semana
+    const weekdays = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    const weekday = weekdays[date.getDay()];
+
+    resultElement.textContent = `La nueva fecha es: ${date.toLocaleDateString('es-ES')} (${weekday})`;
 }
 
 function subtractDays() {
@@ -47,5 +51,9 @@ function subtractDays() {
     const days = parseInt(daysInput, 10);
     date.setDate(date.getDate() - days);
 
-    resultElement.textContent = `La nueva fecha es: ${date.toLocaleDateString('es-ES')}`;
+    // Obtenemos el día de la semana
+    const weekdays = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    const weekday = weekdays[date.getDay()];
+
+    resultElement.textContent = `La nueva fecha es: ${date.toLocaleDateString('es-ES')} (${weekday})`;
 }
