@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Fechas - Edgardavid1000</title>
+    <meta name="description" content="Calculadora de fechas para calcular la distancia entre dos fechas, sumar o restar días. Herramienta simple y profesional.">
+    <meta name="keywords" content="calculadora de fechas, distancia entre fechas, sumar días, restar días, herramienta web">
+    <meta name="author" content="Edgardavid1000">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Calculadora de Fechas
+        </h1>
+    </header>
+    <main>
+        <section id="distance">
+            <h2>Distancia entre dos fechas</h2>
+            <div class="input-group">
+                <label for="date1">Fecha 1:</label>
+                <input type="date" id="date1" required>
+            </div>
+            <div class="input-group">
+                <label for="date2">Fecha 2:</label>
+                <input type="date" id="date2" required>
+            </div>
+            <button onclick="calculateDistance()">Calcular</button>
+            <p id="distanceResult" class="result"></p>
+        </section>
+        <section id="addDays">
+            <h2>Sumar días a una fecha</h2>
+            <div class="input-group">
+                <label for="dateAdd">Fecha:</label>
+                <input type="date" id="dateAdd" required>
+            </div>
+            <div class="input-group">
+                <label for="daysAdd">Días a sumar:</label>
+                <input type="number" id="daysAdd" min="0" required>
+            </div>
+            <button onclick="addDays()">Calcular</button>
+            <p id="addResult" class="result"></p>
+        </section>
+        <section id="subtractDays">
+            <h2>Restar días a una fecha</h2>
+            <div class="input-group">
+                <label for="dateSubtract">Fecha:</label>
+                <input type="date" id="dateSubtract" required>
+            </div>
+            <div class="input-group">
+                <label for="daysSubtract">Días a restar:</label>
+                <input type="number" id="daysSubtract" min="0" required>
+            </div>
+            <button onclick="subtractDays()">Calcular</button>
+            <p id="subtractResult" class="result"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Edgardavid1000 - Hosted on GitHub Pages</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
